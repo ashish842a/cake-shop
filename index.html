@@ -4,8 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cake Shop</title>
+  <link rel="icon" href="image/cake/favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+     @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        /* Import Attractive Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+  /* Choose One Font Style */
+  /* Option 1: Elegant Handwritten Look */
+  .font-logo {
+    font-family: 'Great Vibes', cursive;
+  }
+
+  /* Option 2: Bold Playful Style */
+  /* Uncomment below to use Lobster font */
+  .font-logo2 {
+    font-family: 'Lobster', cursive;
+  }
+
+  /* Option 3: Minimalist Script */
+  /* Uncomment below to use Sacramento font */
+  /* .font-logo {
+    font-family: 'Sacramento', cursive;
+  } */
+
+  /* Option 4: Casual and Friendly */
+  /* Uncomment below to use Dancing Script font */
+  /* .font-logo {
+    font-family: 'Dancing Script', cursive;
+  } */
+    /* .font-logo {
+    font-family: 'Pacifico', cursive;
+    } */
+
     /* Add rotation animation for the cake image */
     @keyframes spin {
       0% {
@@ -16,7 +51,7 @@
       }
     }
     .rotate-cake {
-      animation: spin 20s linear infinite;
+      animation: spin 15s linear infinite;
     }
     html {
   scroll-behavior: smooth;
@@ -30,7 +65,7 @@
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
       <!-- Logo -->
-      <a href="#" class="text-2xl font-bold text-pink-600">Sweet Treats</a>
+      <a href="#" class="text-2xl font-bold text-pink-600 font-logo">Creamy N Spicy</a>
       
       <!-- Navigation Links -->
       <nav class="hidden md:flex space-x-6">
@@ -60,22 +95,36 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="bg-pink-100 py-10">
+  <section id="hero" class="bg-gradient-to-r from-pink-100 via-pink-50 to-pink-100 py-10">
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
       <!-- Left Side Text -->
       <div class="text-center md:text-left md:w-1/2">
-        <h1 class="text-4xl font-bold text-pink-600 mb-4">Welcome to Sweet Treats</h1>
-        <p class="text-lg text-gray-600 mb-6">Delicious cakes made with love for your special moments!</p>
-        <a href="#products" class="bg-pink-600 text-white px-6 py-2 rounded-lg hover:bg-pink-700">Explore Cakes</a>
+        <h1 class="text-5xl font-extrabold text-pink-600 mb-4 leading-tight">
+          Welcome to <span class="text-pink-700 font-logo2">Creamy N Spicy</span>
+        </h1>
+        <p class="text-lg text-gray-700 mb-6">
+          Indulge in our handcrafted cakes, baked with love to make every celebration extra special!
+        </p>
+        <a href="#products" 
+           class="bg-pink-600 text-white px-8 py-3 rounded-full text-lg shadow-lg hover:bg-pink-700 transition duration-300 ease-in-out">
+          Explore Cakes
+        </a>
       </div>
       <!-- Right Side Rotating Cake -->
-      <div class="mt-6 md:mt-0 md:w-1/2 flex justify-center">
-        <img src="https://plus.unsplash.com/premium_photo-1713447395823-2e0b40b75a89?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2FrZXxlbnwwfHwwfHx8MA%3D%3D" 
-        alt="Cake" class="w-48 h-48 rotate-cake rounded-full">
-
+      <div class="mt-10 md:mt-0 md:w-1/2 flex justify-center relative">
+        <div class="relative group">
+            <img 
+              src="https://bkmedia.bakingo.com/sq-round-shaped-chocolate-cake-1-cake0653choc-A.jpg" 
+              alt="Cake" 
+              class="w-72 h-72 md:w-80 md:h-80 rounded-full shadow-lg transform group-hover:scale-105 rotate-cake">
+            <div class="absolute top-0 left-0 w-full h-full rounded-full bg-pink-600 opacity-20 blur-xl group-hover:opacity-30"></div>
+          </div>
+          
+          
       </div>
     </div>
   </section>
+  
 
   <!-- Products Section -->
   <section id="products" class="py-10 bg-white">
@@ -111,7 +160,7 @@
       <div class="w-full md:w-1/2 flex justify-center mb-6 md:mb-0">
         <img 
           src="https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fHww" 
-          alt="Owner of Sweet Treats" 
+          alt="Owner of Creamy N Spicy" 
           class="rounded-full shadow-lg w-48 h-48 md:w-64 md:h-64 object-cover"
         />
       </div>
@@ -119,7 +168,7 @@
       <div class="w-full md:w-1/2 text-center md:text-left">
         <h2 class="text-3xl font-bold text-pink-600 mb-4">About Us</h2>
         <p class="text-gray-600 leading-relaxed">
-          At Sweet Treats, we believe every occasion deserves a sweet touch. Our cakes are crafted with love and the finest ingredients to ensure every bite is a delight! Join us on a journey of flavors and celebrate your special moments with our delicious creations.
+          At <span class="font-logo2">Creamy N Spicy</span>,  we believe every occasion deserves a sweet touch. Our cakes are crafted with love and the finest ingredients to ensure every bite is a delight! Join us on a journey of flavors and celebrate your special moments with our delicious creations.
         </p>
       </div>
     </div>
@@ -133,7 +182,7 @@
         <!-- Testimonial 1 -->
         <div class="bg-pink-50 p-6 rounded-lg shadow-md">
           <p class="text-gray-600 italic mb-4">
-            "The cakes from Sweet Treats are simply amazing! They made my birthday extra special. Highly recommended!"
+            "The cakes from <span class="font-logo2">Creamy N Spicy</span> are simply amazing! They made my birthday extra special. Highly recommended!"
           </p>
           <div class="flex items-center justify-center">
             <img 
@@ -167,7 +216,7 @@
         <!-- Testimonial 3 -->
         <div class="bg-pink-50 p-6 rounded-lg shadow-md">
           <p class="text-gray-600 italic mb-4">
-            "I can’t thank Sweet Treats enough for the amazing wedding cake. It was a centerpiece and a delight!"
+            "I can’t thank <span class="font-logo2">Creamy N Spicy</span> enough for the amazing wedding cake. It was a centerpiece and a delight!"
           </p>
           <div class="flex items-center justify-center">
             <img 
@@ -216,8 +265,18 @@
   <!-- Footer -->
   <footer class="bg-gray-800 text-white py-4">
     <div class="container mx-auto text-center">
-      <p>© 2025 Sweet Treats. All rights reserved.</p>
+      <p>© 2025 Creamy N Spicy. All rights reserved.</p>
     </div>
   </footer>
 </body>
+
+<script>
+    // JavaScript for toggling the mobile menu
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 </html>
